@@ -12,7 +12,8 @@ var serial = {};
   serial.requestPort = function() {
     const filters = [
       { 'vendorId': 0x239A }, // Adafruit boards
-      { 'vendorId': 0xcafe }, // TinyUSB example
+      { 'vendorId': 0x8601 }, // MOAI example
+      { 'vendorId': 0x067B }, // Prolific example
     ];
     return navigator.usb.requestDevice({ 'filters': filters }).then(
       device => new serial.Port(device)
